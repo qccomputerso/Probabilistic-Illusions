@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Probabilistic Illusions</title>
+	<link rel="icon" href="/favicon.png">
+</head>
+<body>
+	<div id="disconnected-tab" class="tab">
+		<h1>
+			Disconnected
+		</h1>
+		Please refresh to play
+	</div>
+	<div id="reconnecting-tab" class="tab">
+		<h1>
+			Reconnecting...
+		</h1>
+	</div>
+	<div id="titlescreen-tab" class="tab">
+		<h1>
+			Probabilistic Illusions
+		</h1>
+		<input id="name" placeholder="Enter name">
+		<button id="startplaying-button">Join game</button>
+	</div>
+	<div id="gameboard-tab" class="tab">
+		<div id="game-1">
+			<h1>There are no games running currently. Come back later!</h1>
+		</div>
+		<div id="game0">
+			<h1 id="welcome-message"></h1>
+		</div>
+		<div id="game1">
+			<h1 id="money-1">$100.00</h1>
+			<span id="flavour-text-1">Take your guesses!</span>
+			<br>
+			<button id="make-bet-1">Make the bet</button>
+			<button id="decline-bet-1">Decline the bet</button>
+			<br>
+			<span id="status-text-1"></span>
+			<br>
+			If no decision is made, then all your money will automatically be bet.
+		</div>
+		<div id="game2">
+			<h1 id="money-2">$100.00</h1>
+			<span id="flavour-text-2">Take your guesses!</span>
+			<br>
+			Bet: $<input type="number" min="0" max="100" id="amount-bet-2">
+			<br>
+			<button id="submit-bet-2">Submit the bet</button>
+			<br>
+			<span id="status-text-2"></span>
+			<br>
+			If no decision is made, then your money will stay as is
+		</div>
+	</div>
+</body>
+<style>
+body {
+	margin: 0;
+	overflow: hidden;
+	font-family: Arial;
+	height: 100vh;
+	width: 100vw;
+	font-size: 20px;
+}
+
+h1 {
+	margin-top: 0;
+	text-align: center;
+}
+
+img {
+	vertical-align: middle;
+}
+
+button {
+	border: none;
+	border-radius: 6px;
+	padding: 15px 20px;
+	color: white;
+	background-color: #0280e6;
+	font-size: 25px;
+	cursor: pointer;
+	margin-top: 1em;
+}
+
+input {
+	font-size: 20px;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+button:active {
+	background-color: #4da7f0;
+}
+
+#gameboard {
+	width: 100vw;
+	height: 100vh;
+}
+
+.tab {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#turn-display,
+#winner-text,
+#back-button {
+	position: absolute;
+}
+
+#winner-text,
+#back-button {
+	left: 50%;
+    transform: translateX(-50%);
+}
+
+#back-button {
+	bottom: 0;
+}
+
+#game1 {
+	text-align: center;
+	padding: 50px;
+}
+</style>
+<script defer type="module" src="game.js"></script>
+</html>

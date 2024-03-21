@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Probabilistic Illusions</title>
+	<link rel="icon" href="/favicon.png">
+</head>
+<body>
+	<div id="disconnected-tab" class="tab">
+		<h1>
+			Disconnected
+		</h1>
+		Please refresh to play
+	</div>
+	<div id="titlescreen-tab" class="tab">
+		<h1>
+			Probabilistic Illusions
+		</h1>
+		<input id="pw" placeholder="Enter password">
+		<button id="startplaying-button">Start game</button>
+	</div>
+	<div id="gameboard-tab" class="tab">
+		<div id="game-1">
+			<h1>There are no games running currently. Come back later!</h1>
+		</div>
+		<div id="game0">
+			<h1>Players</h1>
+			<span id="player-list">Nobody here</span>
+			<br>
+			<br>
+			<button id="start-game">Start game</button>
+		</div>
+		<div id="game1">
+			<button id="flip-coins">Flip coins</button>
+			<button id="start-game2">Next game</button>
+			<br>
+			<span id="game1-ranking"></span>
+		</div>
+		<div id="game2">
+			<button id="flip-coins-2">Flip coins</button>
+			<br>
+			<span id="game2-ranking"></span>
+		</div>
+	</div>
+</body>
+<style>
+body {
+	margin: 0;
+	overflow: hidden;
+	font-family: Arial;
+	height: 100vh;
+	width: 100vw;
+	font-size: 20px;
+}
+
+h1 {
+	margin-top: 0;
+	text-align: center;
+}
+
+img {
+	vertical-align: middle;
+}
+
+button {
+	border: none;
+	border-radius: 6px;
+	padding: 15px 20px;
+	color: white;
+	background-color: #0280e6;
+	font-size: 25px;
+	cursor: pointer;
+	margin-top: 1em;
+}
+
+input {
+	font-size: 20px;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+button:active {
+	background-color: #4da7f0;
+}
+
+#gameboard {
+	width: 100vw;
+	height: 100vh;
+}
+
+.tab {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#turn-display,
+#winner-text,
+#back-button {
+	position: absolute;
+}
+
+#winner-text,
+#back-button {
+	left: 50%;
+    transform: translateX(-50%);
+}
+
+#back-button {
+	bottom: 0;
+}
+
+#game0 {
+	text-align: left;
+	width: calc(100% - 100px);
+	height: calc(100% - 50px);
+	overflow: auto;
+	padding: 50px 50px 0;
+}
+
+#game1, #game2 {
+	text-align: left;
+	width: calc(100% - 100px);
+	height: calc(100% - 50px);
+	overflow: auto;
+	padding: 50px 50px 0;
+}
+</style>
+<script defer type="module" src="admin.js"></script>
+</html>
