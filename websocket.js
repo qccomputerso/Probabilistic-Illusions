@@ -1,5 +1,5 @@
 const websocket = new WebSocket(
-	location.href.toLowerCase().includes("github") ?
+	location.href.toLowerCase().includes("qc") ?
 	"wss://hexagon-game.win" :
 	"ws://localhost:8001/"
 );
@@ -28,7 +28,7 @@ export const Websocket = {
 	},
 	refreshWebsocket() {
 		this.websocket = new WebSocket(
-			location.href.toLowerCase().includes("github") ?
+			location.href.toLowerCase().includes("qc") ?
 			"wss://hexagon-game.win" :
 			"ws://localhost:8001/"
 		);
