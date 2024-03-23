@@ -28,6 +28,7 @@ def user_exists(id):
 
 def handle_player_disconnect(player_code):
 	print("Disconnecting ", player_code)
+	users[player_code].websocket = None
 	async def real_disconnect():
 		print("Disconnected ", player_code)
 		users[player_code].timeout_interval.cancel()
